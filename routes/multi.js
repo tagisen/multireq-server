@@ -10,8 +10,8 @@ router.get('/', function(req, res, next) {
 
 	callRequest = function(){	
 		key = requests[index];
-		requestUrl = baseUrl + '/' + req.query[key]
-
+		requestUrl = 'http://localhost:' + req.app.settings.port + '/' + req.query[key]
+		console.log("localhost",requestUrl)
 		request( requestUrl, function (error, response, body) {
 
 			index++;
